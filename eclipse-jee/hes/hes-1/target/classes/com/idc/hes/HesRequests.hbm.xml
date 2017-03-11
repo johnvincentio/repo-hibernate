@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2016 5:20:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.idc.hes.HesRequests" table="hes_requests" catalog="hes_db">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="customerCompany" type="string">
+            <column name="customer_company" not-null="true" />
+        </property>
+        <property name="customerName" type="string">
+            <column name="customer_name" not-null="true" />
+        </property>
+        <property name="customerAddress" type="string">
+            <column name="customer_address" not-null="true" />
+        </property>
+        <property name="customerPhone" type="string">
+            <column name="customer_phone" length="20" not-null="true" />
+        </property>
+        <property name="customerAltPhone" type="string">
+            <column name="customer_alt_phone" length="20" not-null="true" />
+        </property>
+        <property name="customerEmail" type="string">
+            <column name="customer_email" not-null="true" />
+        </property>
+        <property name="requestedDeliveryDate" type="timestamp">
+            <column name="requested_delivery_date" length="19" not-null="true" />
+        </property>
+        <property name="specialInstructions" type="string">
+            <column name="special_instructions" />
+        </property>
+        <property name="requestDate" type="timestamp">
+            <column name="request_date" length="19" not-null="true" />
+        </property>
+        <set name="hesRequestDetailses" table="hes_request_details" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="requests_id" not-null="true" />
+            </key>
+            <one-to-many class="com.idc.hes.HesRequestDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

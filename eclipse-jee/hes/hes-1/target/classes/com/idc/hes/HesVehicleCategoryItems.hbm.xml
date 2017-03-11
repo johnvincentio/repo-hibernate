@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2016 5:20:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.idc.hes.HesVehicleCategoryItems" table="hes_vehicle_category_items" catalog="hes_db">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hesVehicleCategories" class="com.idc.hes.HesVehicleCategories" fetch="select">
+            <column name="vehicle_item_category_id" not-null="true" />
+        </many-to-one>
+        <property name="displayText" type="string">
+            <column name="display_text" not-null="true" />
+        </property>
+        <property name="seoName" type="string">
+            <column name="seo_name" />
+        </property>
+        <property name="shortDescription" type="string">
+            <column name="short_description" length="500" not-null="true" />
+        </property>
+        <property name="longDescription" type="string">
+            <column name="long_description" length="2000" not-null="true" />
+        </property>
+        <property name="image1Url" type="string">
+            <column name="image_1_url" />
+        </property>
+        <property name="image1AltText" type="string">
+            <column name="image_1_alt_text" length="60" />
+        </property>
+        <property name="image2Url" type="string">
+            <column name="image_2_url" />
+        </property>
+        <property name="image2AltText" type="string">
+            <column name="image_2_alt_text" length="60" />
+        </property>
+        <property name="image3Url" type="string">
+            <column name="image_3_url" />
+        </property>
+        <property name="image3AltText" type="string">
+            <column name="image_3_alt_text" length="60" />
+        </property>
+        <property name="image4Url" type="string">
+            <column name="image_4_url" />
+        </property>
+        <property name="image4AltText" type="string">
+            <column name="image_4_alt_text" length="60" />
+        </property>
+        <property name="image5Url" type="string">
+            <column name="image_5_url" />
+        </property>
+        <property name="image5AltText" type="string">
+            <column name="image_5_alt_text" length="60" />
+        </property>
+        <property name="image6Url" type="string">
+            <column name="image_6_url" />
+        </property>
+        <property name="image6AltText" type="string">
+            <column name="image_6_alt_text" length="60" />
+        </property>
+        <property name="image7Url" type="string">
+            <column name="image_7_url" />
+        </property>
+        <property name="image7AltText" type="string">
+            <column name="image_7_alt_text" length="60" />
+        </property>
+        <property name="image8Url" type="string">
+            <column name="image_8_url" />
+        </property>
+        <property name="image8AltText" type="string">
+            <column name="image_8_alt_text" length="60" />
+        </property>
+        <property name="seqNo" type="java.lang.Integer">
+            <column name="seq_no" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2016 5:20:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.idc.hes.HesTruckCategoryPackageItems" table="hes_truck_category_package_items" catalog="hes_db">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hesTruckCategoryPackages" class="com.idc.hes.HesTruckCategoryPackages" fetch="select">
+            <column name="package_id" not-null="true" />
+        </many-to-one>
+        <property name="displayText" type="string">
+            <column name="display_text" not-null="true" />
+        </property>
+        <property name="seoName" type="string">
+            <column name="seo_name" />
+        </property>
+        <property name="defaultCount" type="java.lang.Integer">
+            <column name="default_count" />
+        </property>
+        <property name="priority" type="java.lang.Integer">
+            <column name="priority" />
+        </property>
+        <property name="seqNo" type="java.lang.Integer">
+            <column name="seq_no" />
+        </property>
+    </class>
+</hibernate-mapping>

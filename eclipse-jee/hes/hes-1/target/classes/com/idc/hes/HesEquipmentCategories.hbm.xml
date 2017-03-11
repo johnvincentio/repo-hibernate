@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 10, 2016 5:20:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.idc.hes.HesEquipmentCategories" table="hes_equipment_categories" catalog="hes_db">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="displayText" type="string">
+            <column name="display_text" not-null="true" />
+        </property>
+        <property name="seoName" type="string">
+            <column name="seo_name" />
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="image_url" />
+        </property>
+        <property name="imageAltText" type="string">
+            <column name="image_alt_text" length="60" />
+        </property>
+        <property name="seqNo" type="java.lang.Integer">
+            <column name="seq_no" />
+        </property>
+        <set name="hesEquipmentCategoryItemses" table="hes_equipment_category_items" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="category_id" not-null="true" />
+            </key>
+            <one-to-many class="com.idc.hes.HesEquipmentCategoryItems" />
+        </set>
+    </class>
+</hibernate-mapping>
